@@ -54,7 +54,7 @@ public class Test extends JavaPlugin implements Listener{
                     Player p = Bukkit.getPlayer(args[1]);
                     if(p != null){
                         p.setGameMode(GameMode.SURVIVAL);
-                        p.damage(60);
+                        p.setHealth(0.0);
                         p.sendMessage("Zostales dodany do listy grajacych na serwerze!");
                         this.lista.add(args[1]);
                         sender.sendMessage("Dodano gracza "+args[1]+ " do listy grajacych!");
