@@ -1,3 +1,6 @@
 name: GiveRabbit
 version: 0.1
 main: pl.grzegorz2047.testapi.Test
+commands:
+    lista:
+        description: 'Dodaje badz usuwa gracza z listy grajacych'

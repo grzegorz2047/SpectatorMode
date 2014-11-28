@@ -15,12 +15,35 @@
  */
 package pl.grzegorz2047.testapi;
 
+import org.bukkit.GameMode;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 /**
  *
  * @author Grzegorz
  */
 public class OnJoin implements Listener{
+    
+    Test plugin;
+    
+    public OnJoin(Test plugin_){
+        this.plugin = plugin_;
+    }
+    
+    
+    @EventHandler
+    void onJoinListener(PlayerJoinEvent e){
+        Player p = e.getPlayer();
+        if(!plugin.lista.contains(p.getName())){
+            p.setGameMode(GameMode.SPECTATOR);
+            p.sendMessage("Jestes spectatorem na serwerze! Popros administratora serwera o mozlowsci gry na serwerze!");
+        }else{
+            p.setGameMode(GameMode.SURVIVAL);
+        }
+
+    }
     
 }
