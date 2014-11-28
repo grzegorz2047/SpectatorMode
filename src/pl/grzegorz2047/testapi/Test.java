@@ -24,6 +24,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Test extends JavaPlugin implements Listener{
 
     List<String> lista = new ArrayList<String>();
+    boolean allowWhitelist = false;
     
     @Override
     public void onEnable(){
@@ -31,6 +32,7 @@ public class Test extends JavaPlugin implements Listener{
         this.getServer().getPluginManager().registerEvents(new OnJoin(this), this);
         this.saveDefaultConfig();
         this.lista = this.getConfig().getStringList("lista");
+        this.allowWhitelist  = this.getConfig().getBoolean("includePlayersFromWhitelist");
     }
    
    /* @EventHandler
