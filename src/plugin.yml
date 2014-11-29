@@ -1,4 +1,4 @@
-name: GiveRabbit
+name: SpectatorMode
 version: 0.1
 main: pl.grzegorz2047.testapi.Test
 commands:

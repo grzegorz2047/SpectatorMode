@@ -39,7 +39,7 @@ public class OnChat implements Listener {
             if((p.isWhitelisted() && this.plugin.allowWhitelist) || (this.plugin.lista.contains(p.getName()))){
                 return;
             }else{
-                p.sendMessage("Nie mozesz pisac na czacie jezeli jestes obserwatorem!");
+                p.sendMessage(this.plugin.noChatPerm);
                 e.setCancelled(true);
             }
         }

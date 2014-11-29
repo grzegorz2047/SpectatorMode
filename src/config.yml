@@ -1,4 +1,8 @@
 includePlayersFromWhitelist: true
-allowSpecChat: true
+allowSpecChat: false
+specTitle: 'Hej'
+specSubTitle: 'Obserwatorze'
+welcomeMsg: 'Jestes spectatorem na serwerze! Popros administratora serwera o mozlowsci gry na serwerze!'
+noChatPermission: 'Nie mozesz korzystac z czatu w trybie obserwatora!'
 lista:
   - grzegorz2047

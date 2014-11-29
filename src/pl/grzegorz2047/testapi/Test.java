@@ -24,7 +24,10 @@ public class Test extends JavaPlugin implements Listener{
     List<String> lista = new ArrayList<String>();
     boolean allowWhitelist = false;
     boolean allowSpecChat = false;
-    
+    String welcomeMsg;
+    String specTitle;
+    String specSubTitle;
+    String noChatPerm;
     @Override
     public void onEnable(){
         System.out.print(this.getName()+" juz dziala <3");
@@ -34,6 +37,10 @@ public class Test extends JavaPlugin implements Listener{
         this.lista = this.getConfig().getStringList("lista");
         this.allowWhitelist  = this.getConfig().getBoolean("includePlayersFromWhitelist");
         this.allowSpecChat  = this.getConfig().getBoolean("allowSpecChat");
+        this.welcomeMsg = this.getConfig().getString("welcomeMsg").replaceAll("§", "&");
+        this.specTitle = this.getConfig().getString("specTitle").replaceAll("§", "&");
+        this.specSubTitle = this.getConfig().getString("specSubTitle").replaceAll("§", "&");
+        this.noChatPerm = this.getConfig().getString("noChatPermission").replaceAll("§", "&");
     }
    
    /* @EventHandler

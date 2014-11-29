@@ -40,8 +40,8 @@ public class OnJoin implements Listener{
         Player p = e.getPlayer();
         if(!plugin.lista.contains(p.getName())){
             p.setGameMode(GameMode.SPECTATOR);
-            Utils.sendTitle(p, 50, 50, 20, "Hej", "spectatorze!");
-            p.sendMessage("Jestes spectatorem na serwerze! Popros administratora serwera o mozlowsci gry na serwerze!");
+            Utils.sendTitle(p, 50, 50, 20, this.plugin.specTitle, this.plugin.specSubTitle);
+            p.sendMessage(this.plugin.welcomeMsg);
         }else if(p.isWhitelisted() && plugin.allowWhitelist){
             p.setGameMode(GameMode.SURVIVAL);
         }else{
