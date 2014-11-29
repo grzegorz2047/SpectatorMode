@@ -12,9 +12,7 @@ import org.bukkit.GameMode;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -59,6 +57,8 @@ public class Test extends JavaPlugin implements Listener{
                         p.setHealth(0.0);
                         p.sendMessage("Zostales dodany do listy grajacych na serwerze!");
                         this.lista.add(args[1]);
+                        this.getConfig().set("list",lista);
+                        this.saveConfig();
                         sender.sendMessage("Dodano gracza "+args[1]+ " do listy grajacych!");
                     }else{
                         sender.sendMessage("Aby dodac gracza, gracz musi byc na serwerze!");
@@ -66,6 +66,8 @@ public class Test extends JavaPlugin implements Listener{
 
                 }else if(args[0].equals("wyrzuc") || args[0].equals("usun") ){
                     this.lista.remove(args[1]);
+                    this.getConfig().set("list",lista);
+                    this.saveConfig();
                     sender.sendMessage("Wyrzucono gracza "+args[1]+ " z listy grajacych!");
                     Player p = Bukkit.getPlayer(args[1]);
                     if(p != null){
