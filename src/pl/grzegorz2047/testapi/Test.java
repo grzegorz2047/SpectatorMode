@@ -23,14 +23,17 @@ public class Test extends JavaPlugin implements Listener{
 
     List<String> lista = new ArrayList<String>();
     boolean allowWhitelist = false;
+    boolean allowSpecChat = false;
     
     @Override
     public void onEnable(){
         System.out.print(this.getName()+" juz dziala <3");
         this.getServer().getPluginManager().registerEvents(new OnJoin(this), this);
+        this.getServer().getPluginManager().registerEvents(new OnChat(this), this);
         this.saveDefaultConfig();
         this.lista = this.getConfig().getStringList("lista");
         this.allowWhitelist  = this.getConfig().getBoolean("includePlayersFromWhitelist");
+        this.allowSpecChat  = this.getConfig().getBoolean("allowSpecChat");
     }
    
    /* @EventHandler

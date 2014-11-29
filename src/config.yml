@@ -1,3 +1,4 @@
 includePlayersFromWhitelist: true
+allowSpecChat: true
 lista:
   - grzegorz2047
